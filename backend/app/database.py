@@ -6,8 +6,10 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 
 load_dotenv()
 
-# 直接读取 Railway MySQL_URL
-DATABASE_URL = os.getenv("MYSQL_URL")
+DATABASE_URL = os.getenv("MYSQL_URL").replace(
+    "mysql://",
+    "mysql+pymysql://"
+)
 
 engine = create_engine(
     DATABASE_URL,
