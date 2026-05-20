@@ -6,7 +6,12 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 
 load_dotenv()
 
-DATABASE_URL = os.getenv("MYSQL_URL").replace(
+DATABASE_URL = os.getenv("MYSQL_URL")
+
+if not DATABASE_URL:
+    raise ValueError("MYSQL_URL 未设置")
+
+DATABASE_URL = DATABASE_URL.replace(
     "mysql://",
     "mysql+pymysql://"
 )
