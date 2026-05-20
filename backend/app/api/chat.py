@@ -17,7 +17,7 @@ from app.models import ChatMessage, Conversation
 router = APIRouter()
 
 DEEPSEEK_CHAT_URL = "https://api.deepseek.com/v1/chat/completions"
-DEEPSEEK_MODEL_ID = "deepseek-v4-flash"
+DEEPSEEK_MODEL_ID = "deepseek-chat"
 
 
 def _extract_delta_content(chunk: dict[str, Any]) -> str:
