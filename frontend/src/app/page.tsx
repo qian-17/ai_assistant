@@ -35,7 +35,7 @@ interface ApiMessageRow {
 const API_CHAT_URL =
   (typeof process !== "undefined" &&
     process.env.NEXT_PUBLIC_API_BASE?.replace(/\/$/, "")) ||
-  "http://127.0.0.1:8000";
+    "http://localhost:8000";
 
 const CHAT_ENDPOINT = `${API_CHAT_URL}/deepseek/chat`;
 const CONVERSATIONS_URL = `${API_CHAT_URL}/conversations`;
