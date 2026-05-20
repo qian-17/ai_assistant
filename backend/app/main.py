@@ -7,7 +7,9 @@ from app.models import Base
 from app.api.chat import router as chat_router
 
 # 自动建表
-Base.metadata.create_all(bind=engine)
+@app.on_event("startup")
+def startup():
+    Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
